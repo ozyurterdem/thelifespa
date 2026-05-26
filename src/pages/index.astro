@@ -36,7 +36,7 @@ const rituals = [
 ];
 
 const areas = [
-  ['Isıtmalı Havuz', 'Yalın her mevsimde sizi dinlendirir.'],
+  ['Isıtmalı Havuz', 'Yılın her mevsiminde sizi dinlendirir.'],
   ['Buhar Odası', 'Nefesinizi rahatlatır, cildinizi aydınlatır.'],
   ['Sauna', 'Kaslarınızı gevşetir, kanınızı canlandırır.'],
   ['Dinlenme Alanı', 'Bitki çayları ve sessiz okuma köşeleri.'],
@@ -154,13 +154,13 @@ const structuredData = {
 
         <form class="booking-form" id="bookingForm">
           <span class="section-label">Randevu Oluştur</span>
-          <input name="name" autocomplete="name" placeholder="Ad Soyad" />
+          <input name="name" autocomplete="name" placeholder="Ad Soyad" aria-label="Ad Soyad" />
           <div class="form-row">
-            <input name="phone" autocomplete="tel" placeholder="Telefon" />
-            <input name="email" autocomplete="email" placeholder="E-posta" />
+            <input name="phone" autocomplete="tel" placeholder="Telefon" aria-label="Telefon" />
+            <input name="email" autocomplete="email" placeholder="E-posta" aria-label="E-posta" />
           </div>
-          <select name="date"><option>Tercih Seçiniz</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option></select>
-          <select name="service">
+          <select name="date" aria-label="Tercih edilen tarih"><option>Tercih Seçiniz</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option></select>
+          <select name="service" aria-label="Hizmet seçiniz">
             <option>Hizmet Seçiniz</option>
             {rituals.map((ritual) => <option>{ritual.title}</option>)}
           </select>
@@ -174,7 +174,7 @@ const structuredData = {
           <p>Lüksü sadelikle birleştirerek zamansız bir iyileşme ve huzur yolculuğu sunuyoruz.</p>
         </div>
         <div class="palette" aria-label="Renk paleti">
-          <span style="--c:#f7f5f1">Ivory</span><span style="--c:#f0e6d6">Champagne</span><span style="--c:#e7dcc8">Soft Sand</span><span style="--c:#a9b99a">Sage</span><span style="--c:#8fa48f">Eucalyptus</span><span style="--c:#d6b96a">Soft Gold</span>
+          <span style="--c:#f7f5f1">Ivory<br />#F7F5F1</span><span style="--c:#f0e6d6">Champagne<br />#F0E6D6</span><span style="--c:#e7dcc8">Soft Sand<br />#E7DCC8</span><span style="--c:#a9b99a">Sage<br />#A9B99A</span><span style="--c:#8fa48f">Eucalyptus<br />#8FA48F</span><span style="--c:#d6b96a">Soft Gold<br />#D6B96A</span>
         </div>
         <div class="type-sample"><strong>Aa</strong><span>Playfair Display / Montserrat</span></div>
       </footer>

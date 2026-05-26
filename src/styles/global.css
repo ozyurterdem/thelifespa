@@ -3,26 +3,40 @@
 :root {
   --ivory: #f7f5f1;
   --champagne: #f0e6d6;
-  --sand: #e7dcc8;
+  --soft-sand: #e7dcc8;
   --sage: #a9b99a;
   --eucalyptus: #8fa48f;
-  --olive: #c7ceb3;
-  --gold: #d6b96a;
+  --pale-olive: #c7ceb3;
+  --soft-gold: #d6b96a;
+  --page-bg: #eeeae3;
   --ink: #4f503f;
   --muted: #777363;
   --line: rgba(79, 80, 63, 0.16);
   --shadow: 0 28px 80px rgba(67, 62, 47, 0.18);
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: Montserrat, ui-sans-serif, system-ui, sans-serif;
+  --h1: 44px;
+  --h1-line: 52px;
+  --h2: 36px;
+  --h2-line: 44px;
+  --h3: 28px;
+  --h3-line: 36px;
+  --body: 16px;
+  --body-line: 26px;
+  --small: 13px;
+  --small-line: 22px;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: #eeeae3;
+  background: var(--page-bg);
   color: var(--ink);
-  font-family: Montserrat, ui-sans-serif, system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: var(--body);
+  line-height: var(--body-line);
 }
 a { color: inherit; text-decoration: none; }
 button, input, select { font: inherit; }
@@ -55,7 +69,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
 }
 .logo {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 34px;
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -69,8 +83,8 @@ img { display: block; max-width: 100%; }
   border: 0;
   border-radius: 4px;
   padding: 0 28px;
-  color: #fff;
-  background: #879170;
+  color: var(--ivory);
+  background: var(--eucalyptus);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -85,7 +99,7 @@ img { display: block; max-width: 100%; }
 }
 .kicker, .section-label, .section-title span {
   display: block;
-  color: #575747;
+  color: var(--ink);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -93,18 +107,18 @@ img { display: block; max-width: 100%; }
 }
 h1, h2, h3 {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-heading);
   font-weight: 500;
-  line-height: 1.05;
   letter-spacing: -0.055em;
 }
-h1 { margin-top: 22px; font-size: clamp(58px, 6.2vw, 86px); }
-h2 { font-size: clamp(34px, 3.2vw, 54px); }
-.hero-content p:not(.kicker) { max-width: 430px; margin: 28px 0 0; color: #5f5b4f; }
+h1 { margin-top: 22px; font-size: var(--h1); line-height: var(--h1-line); }
+h2 { font-size: var(--h2); line-height: var(--h2-line); }
+h3 { font-size: var(--h3); line-height: var(--h3-line); }
+.hero-content p:not(.kicker) { max-width: 430px; margin: 28px 0 0; color: var(--muted); }
 .hero-actions { display: flex; align-items: center; gap: 48px; margin-top: 54px; }
 .link-cta { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .link-cta span { margin-left: 12px; }
-.scroll-indicator { position: absolute; right: 72px; bottom: 50px; display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid rgba(255,255,255,0.75); border-radius: 50%; color: #fff; font-size: 24px; }
+.scroll-indicator { position: absolute; right: 72px; bottom: 50px; display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid rgba(247, 245, 241, 0.75); border-radius: 50%; color: var(--ivory); font-size: 24px; }
 
 .block { padding: 56px 72px 76px; background: var(--ivory); }
 .row-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
@@ -112,19 +126,19 @@ h2 { font-size: clamp(34px, 3.2vw, 54px); }
 .row-title i { display: block; width: 108px; height: 1px; background: var(--line); }
 .row-title a { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .ritual-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.ritual-card { overflow: hidden; min-height: 420px; border-radius: 13px; background: #ede6d9; box-shadow: 0 14px 35px rgba(74, 68, 52, 0.08); }
+.ritual-card { overflow: hidden; min-height: 420px; border-radius: 13px; background: var(--soft-sand); box-shadow: 0 14px 35px rgba(74, 68, 52, 0.08); }
 .ritual-card img { width: 100%; height: 245px; object-fit: cover; }
 .ritual-card div { padding: 26px 22px 24px; background: linear-gradient(180deg, rgba(247,245,241,0.4), rgba(247,245,241,0.94)); }
-.ritual-card h2 { font-size: 31px; }
-.ritual-card p { min-height: 58px; margin: 14px 0 18px; color: var(--muted); font-size: 14px; }
-.ritual-card small { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.ritual-card h2 { font-size: var(--h3); line-height: var(--h3-line); }
+.ritual-card p { min-height: 58px; margin: 14px 0 18px; color: var(--muted); font-size: var(--small); line-height: var(--small-line); }
+.ritual-card small { font-size: var(--small); line-height: var(--small-line); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 
 .wellness {
   display: grid;
   grid-template-columns: 0.9fr 1.35fr;
   gap: 62px;
   padding: 70px 72px;
-  background: linear-gradient(120deg, #f1ecdf, #faf8f1);
+  background: linear-gradient(120deg, var(--champagne), var(--ivory));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -134,21 +148,21 @@ h2 { font-size: clamp(34px, 3.2vw, 54px); }
 .area-list { display: grid; gap: 22px; }
 .area-item { display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: start; }
 .area-item span { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--line); border-radius: 50%; }
-.area-item strong { font-family: "Playfair Display", Georgia, serif; font-size: 24px; font-weight: 500; }
-.area-item p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.area-item strong { font-family: var(--font-heading); font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
+.area-item p { margin: 2px 0 0; color: var(--muted); font-size: var(--small); line-height: var(--small-line); }
 .wellness-gallery { display: grid; grid-template-columns: 1fr 260px; gap: 22px; }
 .wellness-gallery img { width: 100%; border-radius: 12px; object-fit: cover; }
 .gallery-main { height: 540px; }
 .wellness-gallery div { display: grid; gap: 22px; }
 .wellness-gallery div img { height: 164px; }
 
-.appointment { display: grid; grid-template-columns: 1fr 1fr; background: #f3eadf; border-bottom: 1px solid var(--line); }
-.waiting { display: grid; grid-template-columns: 210px 1fr; gap: 42px; padding: 64px 72px; background: #f3e7d7; }
+.appointment { display: grid; grid-template-columns: 1fr 1fr; background: var(--champagne); border-bottom: 1px solid var(--line); }
+.waiting { display: grid; grid-template-columns: 210px 1fr; gap: 42px; padding: 64px 72px; background: var(--champagne); }
 .waiting img { width: 210px; height: 300px; object-fit: cover; border-radius: 8px; opacity: 0.92; }
-.waiting h2 { margin-top: 20px; font-size: 46px; }
+.waiting h2 { margin-top: 20px; font-size: var(--h2); line-height: var(--h2-line); }
 .waiting p { color: var(--muted); }
-.waiting ul { display: grid; gap: 10px; padding: 0; margin: 24px 0 0; list-style: none; color: #686354; }
-.booking-form { display: grid; align-content: center; gap: 16px; padding: 64px 72px; background: #f8f5ed; }
+.waiting ul { display: grid; gap: 10px; padding: 0; margin: 24px 0 0; list-style: none; color: var(--muted); }
+.booking-form { display: grid; align-content: center; gap: 16px; padding: 64px 72px; background: var(--ivory); }
 .booking-form input, .booking-form select {
   width: 100%;
   height: 50px;
@@ -159,19 +173,19 @@ h2 { font-size: clamp(34px, 3.2vw, 54px); }
   background: transparent;
   outline: none;
 }
-.booking-form input:focus, .booking-form select:focus { border-color: #879170; box-shadow: 0 0 0 3px rgba(135,145,112,0.12); }
+.booking-form input:focus, .booking-form select:focus { border-color: var(--eucalyptus); box-shadow: 0 0 0 3px rgba(143, 164, 143, 0.16); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .booking-form button { width: 100%; margin-top: 4px; }
 
-.footer { display: grid; grid-template-columns: 1fr 1.3fr 0.8fr; gap: 52px; padding: 50px 72px 58px; background: #faf8f1; }
-.footer h2 { font-size: 32px; text-transform: uppercase; letter-spacing: 0.02em; }
+.footer { display: grid; grid-template-columns: 1fr 1.3fr 0.8fr; gap: 52px; padding: 50px 72px 58px; background: var(--ivory); }
+.footer h2 { font-size: var(--h3); line-height: var(--h3-line); text-transform: uppercase; letter-spacing: 0.02em; }
 .footer p { max-width: 360px; color: var(--muted); }
 .palette { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-content: end; }
-.palette span { display: grid; gap: 54px; color: #726b5a; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.palette span { display: grid; gap: 54px; color: var(--muted); font-size: var(--small); line-height: var(--small-line); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .palette span::before { content: ""; display: block; height: 54px; background: var(--c); border: 1px solid rgba(79,80,63,0.05); }
 .type-sample { align-self: end; border-left: 1px solid var(--line); padding-left: 40px; }
-.type-sample strong { display: block; font-family: "Playfair Display", Georgia, serif; font-size: 78px; line-height: 1; font-weight: 500; }
-.type-sample span { color: var(--muted); font-size: 13px; }
+.type-sample strong { display: block; font-family: var(--font-heading); font-size: 78px; line-height: 1; font-weight: 500; }
+.type-sample span { color: var(--muted); font-size: var(--small); line-height: var(--small-line); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (max-width: 1100px) {
@@ -191,7 +205,7 @@ h2 { font-size: clamp(34px, 3.2vw, 54px); }
   .top-nav, .hero-content, .scroll-indicator { position: relative; z-index: 2; }
   .logo { font-size: 28px; }
   .nav-button { padding: 0 14px; font-size: 10px; }
-  h1 { font-size: 55px; }
+  h1 { font-size: var(--h1); line-height: var(--h1-line); }
   .hero-actions { gap: 20px; flex-direction: column; align-items: flex-start; }
   .ritual-grid, .form-row, .waiting { grid-template-columns: 1fr; }
   .wellness-gallery div { grid-template-columns: 1fr; }

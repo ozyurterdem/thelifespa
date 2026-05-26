@@ -55,6 +55,33 @@ const journey = [
   ['03', 'Alanınız hazırlansın', 'Oda, havlu ve spa akışı randevunuzdan önce özenle hazırlanır.'],
 ];
 
+const experienceLayers = [
+  ['Sessizlik', 'Randevu saatleri, misafirin acele hissetmeyeceği sakin bir geçişle planlanır.'],
+  ['Mahremiyet', 'Tek veya çift kişilik alanlar, bakım boyunca konfor ve özel alan hissini korur.'],
+  ['Ritüel Akışı', 'Sauna, hamam, jakuzi ve masaj sıralaması ihtiyaca göre birlikte kurgulanır.'],
+];
+
+const serviceMenu = [
+  ['İsveç Masajı', 'İlk spa deneyimi, hafif gevşeme ve dengeli rahatlama isteyenler için.'],
+  ['Medikal Taş Masaj', 'Kas gerginliği, yoğun iş temposu ve bedensel yorgunluk hissine odaklanır.'],
+  ['Kese Köpük', 'Hamam ritüelinin arındırıcı etkisini profesyonel uygulamayla tamamlar.'],
+  ['Sauna', 'Masaj veya hamam öncesi bedeni gevşetmeye yardımcı sıcak hazırlık alanı.'],
+  ['Jakuzi', 'Seans öncesi veya sonrası özel spa molasını daha dingin hale getirir.'],
+  ['Çift Konsepti', 'Özel oda, jakuzi ve masaj akışıyla birlikte planlanan iki kişilik deneyim.'],
+];
+
+const protocols = [
+  ['Hazırlık', 'Oda, havlu ve kullanılacak alan randevu öncesinde hazırlanır.'],
+  ['Yönlendirme', 'Misafirin seçtiği hizmete göre sauna, hamam, jakuzi veya masaj sırası netleştirilir.'],
+  ['Dinlenme', 'Seans sonrası acele etmeden toparlanabileceğiniz sakin bir geçiş alanı sunulur.'],
+];
+
+const faqs = [
+  ['İlk kez geliyorum, hangi hizmet uygun?', 'Rahat ve dengeli başlangıç için İsveç masajı veya hamam + kese köpük akışı önerilir. Daha yoğun kas gerginliğinde medikal taş masaj tercih edilebilir.'],
+  ['Çiftler için özel alan var mı?', 'Evet. Çift kişilik özel oda, jakuzi kullanımı ve masaj akışı WhatsApp üzerinden saat teyidiyle planlanır.'],
+  ['Randevu kesinleşmesi nasıl oluyor?', 'Form veya WhatsApp mesajından sonra ekip uygun saat aralığını teyit eder. Kesin randevu işletme onayıyla netleşir.'],
+];
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
@@ -137,6 +164,21 @@ const structuredData = {
         </div>
       </section>
 
+      <section class="experience-layers">
+        <div class="layer-heading">
+          <span class="section-label">Deneyimin Katmanları</span>
+          <h2>Lüks burada gösteriş değil, iyi düşünülmüş sessizliktir.</h2>
+        </div>
+        <div class="layer-grid">
+          {experienceLayers.map(([title, text]) => (
+            <article>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="wellness" id="wellness">
         <div class="wellness-copy">
           <span class="section-label">Wellness Alanları</span>
@@ -161,6 +203,21 @@ const structuredData = {
         </div>
       </section>
 
+      <section class="service-menu">
+        <div class="menu-title">
+          <span class="section-label">Hizmet Menüsü</span>
+          <h2>İhtiyacınızı tek bir başlıkla değil, doğru akışla ele alırız.</h2>
+        </div>
+        <div class="menu-list">
+          {serviceMenu.map(([title, text]) => (
+            <article>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="packages" id="paketler">
         <div class="package-hero">
           <span class="section-label">Özel Spa Akışları</span>
@@ -178,6 +235,22 @@ const structuredData = {
         </div>
       </section>
 
+      <section class="protocol">
+        <div class="protocol-copy">
+          <span class="section-label">Hazırlık Protokolü</span>
+          <h2>Premium his, seans başlamadan önce kurulur.</h2>
+          <p>Misafirin deneyimi sadece uygulama anından ibaret değildir. Odanın hazırlanması, akışın sıralanması ve seans sonrası dinlenme geçişi aynı bütünün parçalarıdır.</p>
+        </div>
+        <div class="protocol-list">
+          {protocols.map(([title, text]) => (
+            <article>
+              <span></span>
+              <div><h3>{title}</h3><p>{text}</p></div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="journey">
         <div class="journey-title">
           <span class="section-label">Randevu Akışı</span>
@@ -189,6 +262,21 @@ const structuredData = {
               <span>{number}</span>
               <h3>{title}</h3>
               <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-title">
+          <span class="section-label">Sık Sorulanlar</span>
+          <h2>Gelmeden önce bilmek isteyecekleriniz.</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map(([question, answer]) => (
+            <article>
+              <h3>{question}</h3>
+              <p>{answer}</p>
             </article>
           ))}
         </div>

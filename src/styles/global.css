@@ -172,6 +172,28 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
 .ritual-card p { min-height: 58px; margin: 14px 0 18px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 .ritual-card small { font-size: var(--small); line-height: var(--small-line); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 
+.experience-layers {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  padding: 82px 72px;
+  background: linear-gradient(180deg, var(--ivory), var(--champagne));
+  border-top: 1px solid var(--line);
+}
+.layer-heading h2 { margin-top: 18px; max-width: 620px; }
+.layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+.layer-grid article {
+  min-height: 280px;
+  display: grid;
+  align-content: end;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: rgba(247, 245, 241, 0.62);
+}
+.layer-grid article:nth-child(2) { transform: translateY(28px); }
+.layer-grid h3 { margin-bottom: 16px; }
+.layer-grid p { margin: 0; color: var(--muted); font-size: 14px; }
+
 .wellness {
   display: grid;
   grid-template-columns: 0.9fr 1.35fr;
@@ -195,6 +217,20 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
 .wellness-gallery div { display: grid; gap: 22px; }
 .wellness-gallery div img { height: 164px; }
 
+.service-menu {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 62px;
+  padding: 82px 72px;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+}
+.menu-title h2 { margin-top: 18px; }
+.menu-list { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.menu-list article { min-height: 190px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(240, 230, 214, 0.22); }
+.menu-list h3 { font-size: 30px; }
+.menu-list p { color: var(--muted); margin-bottom: 0; }
+
 .packages {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -217,6 +253,24 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
 .package-list p { margin: 0; color: var(--muted); }
 .package-list a { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
 
+.protocol {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 70px;
+  padding: 82px 72px;
+  color: var(--ivory);
+  background:
+    linear-gradient(90deg, rgba(79, 80, 63, 0.88), rgba(79, 80, 63, 0.62)),
+    url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1500&q=82") center/cover;
+}
+.protocol .section-label, .protocol h2 { color: var(--ivory); }
+.protocol-copy p { max-width: 520px; color: rgba(247, 245, 241, 0.78); }
+.protocol-list { display: grid; gap: 18px; }
+.protocol-list article { display: grid; grid-template-columns: 18px 1fr; gap: 18px; padding: 26px; border: 1px solid rgba(247, 245, 241, 0.22); background: rgba(247, 245, 241, 0.08); backdrop-filter: blur(10px); }
+.protocol-list article > span { width: 10px; height: 10px; margin-top: 12px; border-radius: 50%; background: var(--soft-gold); }
+.protocol-list h3 { font-size: 30px; }
+.protocol-list p { color: rgba(247, 245, 241, 0.74); margin-bottom: 0; }
+
 .journey {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -231,6 +285,20 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
 .journey-steps span { color: var(--eucalyptus); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; }
 .journey-steps h3 { margin-top: 22px; font-size: 26px; }
 .journey-steps p { color: var(--muted); font-size: 14px; }
+
+.faq-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  padding: 82px 72px;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+}
+.faq-title h2 { margin-top: 18px; }
+.faq-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq-list article { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.faq-list h3 { font-size: 28px; }
+.faq-list p { max-width: 760px; color: var(--muted); margin-bottom: 0; }
 
 .quote-panel {
   padding: 86px 72px;
@@ -279,7 +347,7 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
   .top-nav { grid-template-columns: 1fr auto; }
   .top-nav nav { display: none; }
   .trust-band { grid-template-columns: repeat(2, 1fr); }
-  .intro-block, .packages, .journey { grid-template-columns: 1fr; }
+  .intro-block, .experience-layers, .service-menu, .packages, .protocol, .journey, .faq-section { grid-template-columns: 1fr; }
   .ritual-grid { grid-template-columns: repeat(2, 1fr); }
   .wellness, .appointment, .footer { grid-template-columns: 1fr; }
   .wellness-gallery { grid-template-columns: 1fr; }
@@ -294,7 +362,8 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
   .nav-button { padding: 0 14px; font-size: 10px; }
   h1 { font-size: var(--h1); line-height: var(--h1-line); }
   .hero-actions { gap: 20px; flex-direction: column; align-items: flex-start; }
-  .trust-band, .ritual-grid, .form-row, .waiting, .package-list article, .journey-steps { grid-template-columns: 1fr; }
+  .trust-band, .layer-grid, .menu-list, .ritual-grid, .form-row, .waiting, .package-list article, .protocol-list article, .journey-steps, .faq-section { grid-template-columns: 1fr; }
+  .layer-grid article:nth-child(2) { transform: none; }
   .wellness-gallery div { grid-template-columns: 1fr; }
   .gallery-main, .wellness-gallery div img { height: 300px; }
   .waiting img { width: 100%; height: 240px; }

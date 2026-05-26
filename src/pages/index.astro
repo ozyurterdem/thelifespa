@@ -9,36 +9,36 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
 const rituals = [
   {
-    title: 'Signature Masaj',
-    text: 'Gerginliği azaltmaya, bedeni hafifletmeye ve zihni sakinleştirmeye odaklanan kişiye özel terapi.',
-    meta: '60 / 90 Dakika · WhatsApp ile bilgi alın',
+    title: 'İsveç Masajı',
+    text: 'Spa deneyimine sakin ve dengeli başlamak isteyenler için dolaşımı destekleyen, kasları gevşetmeye odaklanan klasik masaj.',
+    meta: '50 / 60 / 90 Dakika · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Aroma Terapi',
-    text: 'Bitkisel yağların yumuşak dokunuşlarla birleştiği, hafif ve dinlendirici bir yenilenme seansı.',
-    meta: '60 Dakika · WhatsApp ile bilgi alın',
+    title: 'Medikal Taş Masaj',
+    text: 'Sıcak taş dokunuşu ve terapötik masaj teknikleriyle kas gerginliği, yorgunluk ve stres hissini azaltmaya yardımcı olur.',
+    meta: 'Seanslı · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Bali Masajı',
-    text: 'Ritmik baskı ve akışkan hareketlerle derin rahatlama sağlayan, premium spa deneyiminin klasiği.',
-    meta: '60 / 90 Dakika · WhatsApp ile bilgi alın',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85',
+    title: 'Hamam & Kese Köpük',
+    text: 'Profesyonel kese köpük uygulaması, sauna ve dinlenme akışıyla bedeni arındıran geleneksel spa ritüeli.',
+    meta: 'Hamam + Sauna · WhatsApp ile bilgi alın',
+    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Hamam Ritüeli',
-    text: 'Kese, köpük ve sıcak ortamın arındırıcı etkisiyle bedeni tazeleyen geleneksel bakım.',
-    meta: 'Seanslı · WhatsApp ile bilgi alın',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85',
+    title: 'Çift Spa Deneyimi',
+    text: 'Çift kişilik özel oda, jakuzi kullanımı ve masaj akışıyla birlikte planlanan huzurlu bir spa molası.',
+    meta: 'Özel oda + Jakuzi · WhatsApp ile bilgi alın',
+    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=85',
   },
 ];
 
 const areas = [
-  ['Jakuzi', 'Özel spa molanızı sıcak suyun sakinleştirici etkisiyle tamamlar.'],
-  ['Buhar Odası', 'Ritüel öncesi bedeni hazırlar, cilde yumuşak bir ferahlık hissi verir.'],
-  ['Sauna', 'Kas gerginliğini azaltmaya ve derin gevşemeye destek olur.'],
-  ['Dinlenme Alanı', 'Seans sonrasında sessizce toparlanabileceğiniz sakin bir bekleme alanı sunar.'],
+  ['Yeni ve Ferah Salonlar', 'Randevu öncesi hazırlanan temiz, sakin ve konforlu bakım alanları.'],
+  ['Sauna', 'Kese köpük veya masaj öncesi bedeni gevşetmeye yardımcı sıcak hazırlık alanı.'],
+  ['Jakuzi', 'Tek veya çift kişilik spa molasını tamamlayan dinlendirici sıcak su deneyimi.'],
+  ['Çift Kişilik Özel Oda', 'Birlikte vakit ayırmak isteyen misafirler için mahrem ve özenli spa akışı.'],
 ];
 
 const structuredData = {
@@ -83,7 +83,7 @@ const structuredData = {
         <div class="hero-content">
           <p class="kicker">Serdivan’da sakin ve seçkin bir spa molası</p>
           <h1>Sessizliğin Lüksle Buluştuğu Spa Deneyimi</h1>
-          <p>The Life Spa; masaj, hamam, sauna ve jakuzi deneyimini hijyenik özel alanlar ve profesyonel uygulama anlayışıyla sunar.</p>
+          <p>The Life Spa; İsveç masajı, medikal taş masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimini ferah salonlarda profesyonel uygulama anlayışıyla sunar.</p>
           <div class="hero-actions">
             <a class="primary" href="#randevu">Randevu Oluştur</a>
             <a class="link-cta" href="#ritueller">Deneyim Keşfet <span>→</span></a>
@@ -114,8 +114,8 @@ const structuredData = {
       <section class="wellness" id="wellness">
         <div class="wellness-copy">
           <span class="section-label">Wellness Alanları</span>
-          <h2>Bedeninizi Arındırın, Ruhunuzu Dengeleyin.</h2>
-          <p>Her detay; sakinlik, temizlik ve konfor hissini güçlendirmek için planlanır. Seansınız başlamadan önce alanınız hazırlanır, deneyiminiz size özel ilerler.</p>
+          <h2>Yoğun Günün Ardından Kendinize Alan Açın.</h2>
+          <p>İş ve yaşam temposundan uzaklaşmak, gevşemek ve stresten arınmak için hazırlanan spa akışında her detay konfor, temizlik ve sakinlik hissini güçlendirmek için planlanır.</p>
           <div class="area-list">
             {areas.map(([title, text]) => (
               <div class="area-item">
@@ -141,7 +141,7 @@ const structuredData = {
           <div>
             <span class="section-label">Sizi Bekliyoruz</span>
             <h2>Zamanı Kendinize Ayırın</h2>
-            <p>Randevunuzu oluşturun, size özel deneyiminizi planlayalım.</p>
+            <p>Masaj, hamam, sauna, jakuzi veya çift spa talebinizi iletin; size uygun saat aralığını WhatsApp üzerinden netleştirelim.</p>
             <ul>
               <li>{phoneDisplay}</li>
               <li>WhatsApp: {phoneDisplay}</li>
@@ -170,7 +170,7 @@ const structuredData = {
       <footer class="footer">
         <div>
           <h2>TheLifeSpa</h2>
-          <p>Serdivan’da günlük temponun dışına çıkmak, bedeni dinlendirmek ve kendinize sakin bir zaman ayırmak için tasarlanmış premium spa deneyimi.</p>
+          <p>Serdivan’da masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimini ferah salonlarda, sakin ve profesyonel bir atmosferde sunuyoruz.</p>
         </div>
         <div class="footer-links" aria-label="Hızlı bağlantılar">
           <a href="#ritueller">Ritüeller</a>

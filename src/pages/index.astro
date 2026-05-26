@@ -110,7 +110,7 @@ const structuredData = {
     <main class="page-shell">
       <section class="hero" id="top">
         <header class="top-nav">
-          <a class="logo" href="#top">TheLifeSpa</a>
+          <a class="logo" href="#top">The Life</a>
           <nav aria-label="Ana menü">
             <a href="#ritueller">Ritüeller</a>
             <a href="#wellness">Wellness</a>
@@ -320,21 +320,33 @@ const structuredData = {
       </section>
 
       <footer class="footer">
-        <div>
-          <h2>TheLifeSpa</h2>
-          <p>Serdivan’da masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimini ferah salonlarda, sakin ve profesyonel bir atmosferde sunuyoruz.</p>
+        <div class="footer-brand">
+          <span class="footer-mark">The Life</span>
+          <p>Serdivan’da masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimini sakin, ferah ve profesyonel bir atmosferde sunuyoruz.</p>
+          <a class="footer-cta" href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp ile Randevu Al</a>
         </div>
-        <div class="footer-links" aria-label="Hızlı bağlantılar">
-          <a href="#ritueller">Ritüeller</a>
+
+        <div class="footer-column" aria-label="Hizmetler">
+          <span>Hizmetler</span>
+          <a href="#ritueller">İsveç Masajı</a>
+          <a href="#ritueller">Medikal Taş Masaj</a>
+          <a href="#ritueller">Hamam & Kese Köpük</a>
+          <a href="#ritueller">Çift Spa Deneyimi</a>
+        </div>
+
+        <div class="footer-column" aria-label="Deneyim">
+          <span>Deneyim</span>
           <a href="#wellness">Wellness Alanları</a>
-          <a href="#paketler">Paketler</a>
-          <a href="#randevu">Randevu Oluştur</a>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="#paketler">Özel Spa Akışları</a>
+          <a href="#randevu">Randevu Akışı</a>
+          <a href="#iletisim">İletişim</a>
         </div>
+
         <div class="footer-contact">
+          <span>Rezervasyon</span>
           <strong>{phoneDisplay}</strong>
-          <span>{address}</span>
-          <span>Her Gün 09:00 - 22:00</span>
+          <p>{address}</p>
+          <p>Her Gün 09:00 - 22:00</p>
         </div>
       </footer>
     </main>

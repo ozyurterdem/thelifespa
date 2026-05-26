@@ -3,43 +3,52 @@ import '../styles/global.css';
 
 const whatsappNumber = '905012500054';
 const phoneDisplay = '0501 250 00 54';
+const email = 'info@thelifespa.com';
 const address = 'İstiklal Mah., Altınışık Sk. No:43/A, Serdivan/Sakarya';
-const mapUrl = 'https://www.google.com/maps/search/?api=1&query=%C4%B0stiklal%20Alt%C4%B1n%C4%B1%C5%9F%C4%B1k%20Sk.%20No%3A43%2FA%20Serdivan%20Sakarya';
+const whatsappText = encodeURIComponent('Merhaba, The Life Spa için randevu oluşturmak istiyorum.');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
-const quickMessage = encodeURIComponent('Merhaba, The Life Spa için randevu almak istiyorum.');
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${quickMessage}`;
-
-const services = [
-  { title: 'Bali Masajı', text: 'Derin gevşeme, yoğun tempo sonrası bedeni yumuşatan ritmik bakım.', duration: '60 / 90 dk' },
-  { title: 'Medikal Masaj', text: 'Kas gerginliği ve bölgesel yorgunluk için profesyonel uygulama.', duration: '45 / 60 dk' },
-  { title: 'Aroma Terapi', text: 'Bitkisel yağlarla sakin, hafif ve duyusal bir rahatlama deneyimi.', duration: '60 dk' },
-  { title: 'Hamam & Kese Köpük', text: 'Geleneksel hamam ritüeli, arınma ve tazelenme için ideal.', duration: '45 dk' },
-  { title: 'Sauna & Jakuzi', text: 'Özel alan konforunda sıcak su, buhar ve sessiz dinlenme.', duration: 'Seanslı' },
-  { title: 'Çiftlere Özel Spa', text: 'İki kişilik özel oda, jakuzi ve masajla sakin bir kaçış.', duration: 'Paket' },
+const rituals = [
+  {
+    title: 'TheLife Signature',
+    text: 'Kişiye özel bütünsel beden terapisi.',
+    meta: '90 Dakika · Bilgi Alın',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    title: 'Detox Ritüeli',
+    text: 'Arınma ve dinginliği aynı seansta buluşturan bakım.',
+    meta: '75 Dakika · Bilgi Alın',
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    title: 'Uzak Doğu Ritüeli',
+    text: 'Geleneksel tekniklerle enerji akışını destekleyen terapi.',
+    meta: '90 Dakika · Bilgi Alın',
+    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    title: 'Huzur Ritüeli',
+    text: 'Sıcak taşlar ve sakin atmosferle derin gevşeme.',
+    meta: '75 Dakika · Bilgi Alın',
+    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85',
+  },
 ];
 
-const packages = [
-  { name: 'Yenilenme Molası', items: ['Masaj', 'Sauna', 'Dinlenme'], note: 'Kısa ama etkili şehir molası.' },
-  { name: 'Derin Rahatlama', items: ['Medikal Masaj', 'Sıcak Taş', 'Aroma'], note: 'Yoğun kas gerginliği için.' },
-  { name: 'Çift Spa Deneyimi', items: ['Çift Odası', 'Jakuzi', 'Masaj'], note: 'Birlikte sakinleşmek isteyenlere.' },
+const areas = [
+  ['Isıtmalı Havuz', 'Yalın her mevsimde sizi dinlendirir.'],
+  ['Buhar Odası', 'Nefesinizi rahatlatır, cildinizi aydınlatır.'],
+  ['Sauna', 'Kaslarınızı gevşetir, kanınızı canlandırır.'],
+  ['Dinlenme Alanı', 'Bitki çayları ve sessiz okuma köşeleri.'],
 ];
-
-const trustItems = ['Hijyenik özel odalar', 'Profesyonel ekip', 'Serdivan merkezde kolay ulaşım', 'WhatsApp ile hızlı randevu'];
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
-  name: 'The Life Spa Sakarya',
-  description: 'Serdivan’da masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimi.',
-  telephone: `+${whatsappNumber}`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'İstiklal Mah., Altınışık Sk. No:43/A',
-    addressLocality: 'Serdivan',
-    addressRegion: 'Sakarya',
-    addressCountry: 'TR',
-  },
+  name: 'The Life Spa',
   url: 'https://thelife.siberkale.com',
+  telephone: `+${whatsappNumber}`,
+  address,
 };
 ---
 
@@ -48,167 +57,128 @@ const structuredData = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>The Life Spa Sakarya | Serdivan Masaj, Hamam, Sauna ve Jakuzi</title>
-    <meta name="description" content="Serdivan’da premium spa deneyimi. Masaj, hamam, sauna, jakuzi ve çiftlere özel spa paketleri için The Life Spa’dan WhatsApp ile randevu alın." />
+    <title>The Life Spa | Zamansız Spa ve Wellness Deneyimi</title>
+    <meta name="description" content="The Life Spa’da masaj, wellness alanları ve kişiye özel ritüellerle sessiz, sade ve lüks bir spa deneyimi yaşayın." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="The Life Spa ana sayfa">
-        <span class="brand-mark">L</span>
-        <span>The Life Spa</span>
-      </a>
-      <nav class="main-nav" aria-label="Ana menü">
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#paketler">Paketler</a>
-        <a href="#rezervasyon">Rezervasyon</a>
-        <a href="#iletisim">İletişim</a>
-      </nav>
-      <a class="header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Randevu Al</a>
-    </header>
+    <main class="page-shell">
+      <section class="hero" id="top">
+        <header class="top-nav">
+          <a class="logo" href="#top">TheLifeSpa</a>
+          <nav aria-label="Ana menü">
+            <a href="#ritueller">Ritüeller</a>
+            <a href="#wellness">Wellness</a>
+            <a href="#alanlar">Alanlar</a>
+            <a href="#randevu">Randevu</a>
+            <a href="#iletisim">İletişim</a>
+          </nav>
+          <a class="nav-button" href="#randevu">Randevu Oluştur</a>
+        </header>
 
-    <main id="top">
-      <section class="hero section-dark">
-        <div class="hero-overlay"></div>
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Serdivan’da premium spa deneyimi</p>
-            <h1>Şehrin içinde sessiz bir yenilenme alanı.</h1>
-            <p class="lead">Masaj, hamam, sauna, jakuzi ve çiftlere özel spa paketleriyle günün temposunu geride bırakın.</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="#rezervasyon">Rezervasyon Oluştur</a>
-              <a class="btn btn-ghost-dark" href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
-            </div>
+        <div class="hero-content">
+          <p class="kicker">Zamansız. Sade. Derin içim.</p>
+          <h1>Sessizliğin Lüksle Buluştuğu Spa Deneyimi</h1>
+          <p>Bedeninizi, zihninizi ve ruhunuzu yenileyerek tam bir iyilik hâline ulaşın. En seçkin ritüellerle size özel wellness yolculuğu.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#randevu">Randevu Oluştur</a>
+            <a class="link-cta" href="#ritueller">Deneyim Keşfet <span>→</span></a>
           </div>
-
-          <aside class="booking-preview reveal" aria-label="Hızlı bilgi">
-            <span class="preview-label">Bugün için bilgi alın</span>
-            <strong>{phoneDisplay}</strong>
-            <p>Formu doldurun, talebiniz WhatsApp mesajına dönüşsün. Saat teyidi işletme tarafından yapılır.</p>
-            <div class="preview-line"><span>Konum</span><b>Serdivan / Sakarya</b></div>
-            <div class="preview-line"><span>Deneyim</span><b>Özel oda + hijyen</b></div>
-          </aside>
         </div>
+        <a class="scroll-indicator" href="#ritueller" aria-label="Aşağı kaydır">↓</a>
       </section>
 
-      <section class="trust-strip" aria-label="Güven unsurları">
-        <div class="container trust-grid">
-          {trustItems.map((item) => <span>{item}</span>)}
+      <section class="block" id="ritueller">
+        <div class="section-title row-title">
+          <div><span>İmza Ritüeller</span><i></i></div>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">Tüm ritüelleri görüntüle →</a>
         </div>
-      </section>
-
-      <section class="section" id="hizmetler">
-        <div class="container section-heading">
-          <p class="eyebrow light">Hizmetler</p>
-          <h2>Rahatlama, arınma ve özel bakım aynı çatı altında.</h2>
-          <p>Her hizmet, sakin atmosfer ve net rezervasyon akışıyla planlanır.</p>
-        </div>
-        <div class="container card-grid">
-          {services.map((service) => (
-            <article class="service-card reveal">
-              <span>{service.duration}</span>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-              <a href={`${whatsappUrl}%0AHizmet%3A%20${encodeURIComponent(service.title)}`} target="_blank" rel="noreferrer">Bilgi al</a>
+        <div class="ritual-grid">
+          {rituals.map((ritual) => (
+            <article class="ritual-card">
+              <img src={ritual.image} alt={`${ritual.title} görseli`} loading="lazy" decoding="async" />
+              <div>
+                <h2>{ritual.title}</h2>
+                <p>{ritual.text}</p>
+                <small>{ritual.meta}</small>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section class="section packages" id="paketler">
-        <div class="container split-heading">
+      <section class="wellness" id="wellness">
+        <div class="wellness-copy">
+          <span class="section-label">Wellness Alanları</span>
+          <h2>Bedeninizi Arındırın, Ruhunuzu Dengeleyin.</h2>
+          <p>Özenle tasarlanmış alanlarımızda sauna, spa ve dinginlik ritüelleri ile iyiliği deneyimleyin.</p>
+          <div class="area-list">
+            {areas.map(([title, text]) => (
+              <div class="area-item">
+                <span aria-hidden="true">◌</span>
+                <div><strong>{title}</strong><p>{text}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="wellness-gallery">
+          <img class="gallery-main" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1100&q=85" alt="Spa bakım alanı" loading="lazy" decoding="async" />
           <div>
-            <p class="eyebrow light">Paketler</p>
-            <h2>Tek seans değil, tamamlanmış bir spa molası.</h2>
+            <img src="https://images.unsplash.com/photo-1607008829749-c0f284a498e4?auto=format&fit=crop&w=700&q=85" alt="Dinlenme alanı" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=700&q=85" alt="Sauna alanı" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=700&q=85" alt="Sessiz bakım odası" loading="lazy" decoding="async" />
           </div>
-          <p>Fiyat ve uygun saat bilgisi için WhatsApp üzerinden hızlı dönüş alın.</p>
-        </div>
-        <div class="container package-grid">
-          {packages.map((item) => (
-            <article class="package-card reveal">
-              <h3>{item.name}</h3>
-              <p>{item.note}</p>
-              <ul>
-                {item.items.map((part) => <li>{part}</li>)}
-              </ul>
-              <a class="btn btn-soft" href={`${whatsappUrl}%0APaket%3A%20${encodeURIComponent(item.name)}`} target="_blank" rel="noreferrer">Paket Bilgisi Al</a>
-            </article>
-          ))}
         </div>
       </section>
 
-      <section class="section ritual section-dark">
-        <div class="container ritual-grid">
-          <div class="ritual-image" role="img" aria-label="Spa bakım odasında sakin atmosfer"></div>
-          <div class="ritual-copy reveal">
-            <p class="eyebrow">Hijyen ve özel alan</p>
-            <h2>Kendinize ayrılmış sakin bir ritüel.</h2>
-            <p>Temiz havlu, düzenli oda hazırlığı, sessiz dinlenme alanı ve profesyonel uygulama süreciyle güven veren bir deneyim.</p>
-            <ul class="check-list">
-              <li>Özel oda planlaması</li>
-              <li>Randevu öncesi saat teyidi</li>
-              <li>Masaj, hamam ve sauna seçenekleri</li>
+      <section class="appointment" id="randevu">
+        <div class="waiting" id="iletisim">
+          <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=85" alt="Minimal spa objesi" loading="lazy" decoding="async" />
+          <div>
+            <span class="section-label">Sizi Bekliyoruz</span>
+            <h2>Zamanı Kendinize Ayırın</h2>
+            <p>Randevunuzu oluşturun, size özel deneyiminizi planlayalım.</p>
+            <ul>
+              <li>{phoneDisplay}</li>
+              <li>{email}</li>
+              <li>{address}</li>
+              <li>Her Gün 09:00 - 22:00</li>
             </ul>
           </div>
         </div>
+
+        <form class="booking-form" id="bookingForm">
+          <span class="section-label">Randevu Oluştur</span>
+          <input name="name" autocomplete="name" placeholder="Ad Soyad" />
+          <div class="form-row">
+            <input name="phone" autocomplete="tel" placeholder="Telefon" />
+            <input name="email" autocomplete="email" placeholder="E-posta" />
+          </div>
+          <select name="date"><option>Tercih Seçiniz</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option></select>
+          <select name="service">
+            <option>Hizmet Seçiniz</option>
+            {rituals.map((ritual) => <option>{ritual.title}</option>)}
+          </select>
+          <button type="submit">Randevu Talebini Gönder</button>
+        </form>
       </section>
 
-      <section class="section" id="rezervasyon">
-        <div class="container reservation-grid">
-          <div class="section-heading align-left">
-            <p class="eyebrow light">Rezervasyon</p>
-            <h2>Bilgilerinizi yazın, mesajınız WhatsApp’a hazır gitsin.</h2>
-            <p>Bu form ön talep oluşturur. Kesin saat işletme tarafından WhatsApp üzerinden teyit edilir.</p>
-          </div>
-          <form class="reservation-card" id="bookingForm">
-            <label>Ad Soyad<input name="name" autocomplete="name" placeholder="Adınız" /></label>
-            <label>Telefon<input name="phone" autocomplete="tel" placeholder="05xx xxx xx xx" /></label>
-            <label>Hizmet
-              <select name="service">
-                {services.map((service) => <option>{service.title}</option>)}
-              </select>
-            </label>
-            <label>Kişi Sayısı
-              <select name="people"><option>1 kişi</option><option>2 kişi</option><option>3+ kişi</option></select>
-            </label>
-            <label>Tarih<input name="date" type="date" /></label>
-            <label>Saat Aralığı
-              <select name="time"><option>10:00 - 13:00</option><option>13:00 - 16:00</option><option>16:00 - 19:00</option><option>19:00 - 22:00</option></select>
-            </label>
-            <label class="full">Not<textarea name="note" placeholder="Özel bir talebiniz varsa yazabilirsiniz."></textarea></label>
-            <div class="form-actions full">
-              <button class="btn btn-primary" type="submit">WhatsApp’a Gönder</button>
-              <a class="btn btn-outline" href={`tel:+${whatsappNumber}`}>Telefonla Ara</a>
-            </div>
-          </form>
+      <footer class="footer">
+        <div>
+          <h2>TheLifeSpa</h2>
+          <p>Lüksü sadelikle birleştirerek zamansız bir iyileşme ve huzur yolculuğu sunuyoruz.</p>
         </div>
-      </section>
-
-      <section class="section contact" id="iletisim">
-        <div class="container contact-card">
-          <div>
-            <p class="eyebrow light">Adres & iletişim</p>
-            <h2>Serdivan’da sakin bir mola.</h2>
-            <p>{address}</p>
-            <div class="actions">
-              <a class="btn btn-primary" href={mapUrl} target="_blank" rel="noreferrer">Yol Tarifi Al</a>
-              <a class="btn btn-outline" href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp Hattı</a>
-            </div>
-          </div>
-          <div class="contact-visual" role="img" aria-label="Spa atmosferi"></div>
+        <div class="palette" aria-label="Renk paleti">
+          <span style="--c:#f7f5f1">Ivory</span><span style="--c:#f0e6d6">Champagne</span><span style="--c:#e7dcc8">Soft Sand</span><span style="--c:#a9b99a">Sage</span><span style="--c:#8fa48f">Eucalyptus</span><span style="--c:#d6b96a">Soft Gold</span>
         </div>
-      </section>
+        <div class="type-sample"><strong>Aa</strong><span>Playfair Display / Montserrat</span></div>
+      </footer>
     </main>
-
-    <div class="mobile-bar" aria-label="Mobil hızlı aksiyonlar">
-      <a href="#rezervasyon">Rezervasyon</a>
-      <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
-    </div>
 
     <script is:inline>
       const form = document.querySelector('#bookingForm');
@@ -216,14 +186,12 @@ const structuredData = {
         event.preventDefault();
         const data = new FormData(form);
         const message = [
-          'Merhaba, The Life Spa için rezervasyon oluşturmak istiyorum.',
+          'Merhaba, The Life Spa için randevu oluşturmak istiyorum.',
           `Ad Soyad: ${data.get('name') || '-'}`,
           `Telefon: ${data.get('phone') || '-'}`,
+          `E-posta: ${data.get('email') || '-'}`,
+          `Tercih: ${data.get('date') || '-'}`,
           `Hizmet: ${data.get('service') || '-'}`,
-          `Kişi Sayısı: ${data.get('people') || '-'}`,
-          `Tarih: ${data.get('date') || '-'}`,
-          `Saat Aralığı: ${data.get('time') || '-'}`,
-          `Not: ${data.get('note') || '-'}`,
         ].join('\n');
         window.open(`https://wa.me/905012500054?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
       });

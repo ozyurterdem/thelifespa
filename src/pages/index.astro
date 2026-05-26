@@ -3,43 +3,42 @@ import '../styles/global.css';
 
 const whatsappNumber = '905012500054';
 const phoneDisplay = '0501 250 00 54';
-const email = 'info@thelifespa.com';
 const address = 'İstiklal Mah., Altınışık Sk. No:43/A, Serdivan/Sakarya';
 const whatsappText = encodeURIComponent('Merhaba, The Life Spa için randevu oluşturmak istiyorum.');
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
 const rituals = [
   {
-    title: 'TheLife Signature',
-    text: 'Kişiye özel bütünsel beden terapisi.',
-    meta: '90 Dakika · Bilgi Alın',
+    title: 'Signature Masaj',
+    text: 'Gerginliği azaltmaya, bedeni hafifletmeye ve zihni sakinleştirmeye odaklanan kişiye özel terapi.',
+    meta: '60 / 90 Dakika · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Detox Ritüeli',
-    text: 'Arınma ve dinginliği aynı seansta buluşturan bakım.',
-    meta: '75 Dakika · Bilgi Alın',
+    title: 'Aroma Terapi',
+    text: 'Bitkisel yağların yumuşak dokunuşlarla birleştiği, hafif ve dinlendirici bir yenilenme seansı.',
+    meta: '60 Dakika · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Uzak Doğu Ritüeli',
-    text: 'Geleneksel tekniklerle enerji akışını destekleyen terapi.',
-    meta: '90 Dakika · Bilgi Alın',
+    title: 'Bali Masajı',
+    text: 'Ritmik baskı ve akışkan hareketlerle derin rahatlama sağlayan, premium spa deneyiminin klasiği.',
+    meta: '60 / 90 Dakika · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Huzur Ritüeli',
-    text: 'Sıcak taşlar ve sakin atmosferle derin gevşeme.',
-    meta: '75 Dakika · Bilgi Alın',
+    title: 'Hamam Ritüeli',
+    text: 'Kese, köpük ve sıcak ortamın arındırıcı etkisiyle bedeni tazeleyen geleneksel bakım.',
+    meta: 'Seanslı · WhatsApp ile bilgi alın',
     image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85',
   },
 ];
 
 const areas = [
-  ['Isıtmalı Havuz', 'Yılın her mevsiminde sizi dinlendirir.'],
-  ['Buhar Odası', 'Nefesinizi rahatlatır, cildinizi aydınlatır.'],
-  ['Sauna', 'Kaslarınızı gevşetir, kanınızı canlandırır.'],
-  ['Dinlenme Alanı', 'Bitki çayları ve sessiz okuma köşeleri.'],
+  ['Jakuzi', 'Özel spa molanızı sıcak suyun sakinleştirici etkisiyle tamamlar.'],
+  ['Buhar Odası', 'Ritüel öncesi bedeni hazırlar, cilde yumuşak bir ferahlık hissi verir.'],
+  ['Sauna', 'Kas gerginliğini azaltmaya ve derin gevşemeye destek olur.'],
+  ['Dinlenme Alanı', 'Seans sonrasında sessizce toparlanabileceğiniz sakin bir bekleme alanı sunar.'],
 ];
 
 const structuredData = {
@@ -57,8 +56,8 @@ const structuredData = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>The Life Spa | Zamansız Spa ve Wellness Deneyimi</title>
-    <meta name="description" content="The Life Spa’da masaj, wellness alanları ve kişiye özel ritüellerle sessiz, sade ve lüks bir spa deneyimi yaşayın." />
+    <title>The Life Spa Sakarya | Serdivan Premium Masaj ve Spa</title>
+    <meta name="description" content="Serdivan’da premium spa deneyimi. Masaj, hamam, sauna ve jakuzi ritüelleri için The Life Spa’dan WhatsApp ile randevu alın." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -74,7 +73,7 @@ const structuredData = {
           <nav aria-label="Ana menü">
             <a href="#ritueller">Ritüeller</a>
             <a href="#wellness">Wellness</a>
-            <a href="#alanlar">Alanlar</a>
+            <a href="#ritueller">Ritüeller</a>
             <a href="#randevu">Randevu</a>
             <a href="#iletisim">İletişim</a>
           </nav>
@@ -82,9 +81,9 @@ const structuredData = {
         </header>
 
         <div class="hero-content">
-          <p class="kicker">Zamansız. Sade. Derin içim.</p>
+          <p class="kicker">Serdivan’da sakin ve seçkin bir spa molası</p>
           <h1>Sessizliğin Lüksle Buluştuğu Spa Deneyimi</h1>
-          <p>Bedeninizi, zihninizi ve ruhunuzu yenileyerek tam bir iyilik hâline ulaşın. En seçkin ritüellerle size özel wellness yolculuğu.</p>
+          <p>The Life Spa; masaj, hamam, sauna ve jakuzi deneyimini hijyenik özel alanlar ve profesyonel uygulama anlayışıyla sunar.</p>
           <div class="hero-actions">
             <a class="primary" href="#randevu">Randevu Oluştur</a>
             <a class="link-cta" href="#ritueller">Deneyim Keşfet <span>→</span></a>
@@ -96,7 +95,7 @@ const structuredData = {
       <section class="block" id="ritueller">
         <div class="section-title row-title">
           <div><span>İmza Ritüeller</span><i></i></div>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">Tüm ritüelleri görüntüle →</a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">Uygun saat sor →</a>
         </div>
         <div class="ritual-grid">
           {rituals.map((ritual) => (
@@ -116,7 +115,7 @@ const structuredData = {
         <div class="wellness-copy">
           <span class="section-label">Wellness Alanları</span>
           <h2>Bedeninizi Arındırın, Ruhunuzu Dengeleyin.</h2>
-          <p>Özenle tasarlanmış alanlarımızda sauna, spa ve dinginlik ritüelleri ile iyiliği deneyimleyin.</p>
+          <p>Her detay; sakinlik, temizlik ve konfor hissini güçlendirmek için planlanır. Seansınız başlamadan önce alanınız hazırlanır, deneyiminiz size özel ilerler.</p>
           <div class="area-list">
             {areas.map(([title, text]) => (
               <div class="area-item">
@@ -145,7 +144,7 @@ const structuredData = {
             <p>Randevunuzu oluşturun, size özel deneyiminizi planlayalım.</p>
             <ul>
               <li>{phoneDisplay}</li>
-              <li>{email}</li>
+              <li>WhatsApp: {phoneDisplay}</li>
               <li>{address}</li>
               <li>Her Gün 09:00 - 22:00</li>
             </ul>
@@ -159,7 +158,7 @@ const structuredData = {
             <input name="phone" autocomplete="tel" placeholder="Telefon" aria-label="Telefon" />
             <input name="email" autocomplete="email" placeholder="E-posta" aria-label="E-posta" />
           </div>
-          <select name="date" aria-label="Tercih edilen tarih"><option>Tercih Seçiniz</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option></select>
+          <select name="date" aria-label="Tercih edilen tarih"><option>Tercih Edilen Gün</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option></select>
           <select name="service" aria-label="Hizmet seçiniz">
             <option>Hizmet Seçiniz</option>
             {rituals.map((ritual) => <option>{ritual.title}</option>)}
@@ -171,12 +170,19 @@ const structuredData = {
       <footer class="footer">
         <div>
           <h2>TheLifeSpa</h2>
-          <p>Lüksü sadelikle birleştirerek zamansız bir iyileşme ve huzur yolculuğu sunuyoruz.</p>
+          <p>Serdivan’da günlük temponun dışına çıkmak, bedeni dinlendirmek ve kendinize sakin bir zaman ayırmak için tasarlanmış premium spa deneyimi.</p>
         </div>
-        <div class="palette" aria-label="Renk paleti">
-          <span style="--c:#f7f5f1">Ivory<br />#F7F5F1</span><span style="--c:#f0e6d6">Champagne<br />#F0E6D6</span><span style="--c:#e7dcc8">Soft Sand<br />#E7DCC8</span><span style="--c:#a9b99a">Sage<br />#A9B99A</span><span style="--c:#8fa48f">Eucalyptus<br />#8FA48F</span><span style="--c:#d6b96a">Soft Gold<br />#D6B96A</span>
+        <div class="footer-links" aria-label="Hızlı bağlantılar">
+          <a href="#ritueller">Ritüeller</a>
+          <a href="#wellness">Wellness Alanları</a>
+          <a href="#randevu">Randevu Oluştur</a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
-        <div class="type-sample"><strong>Aa</strong><span>Playfair Display / Montserrat</span></div>
+        <div class="footer-contact">
+          <strong>{phoneDisplay}</strong>
+          <span>{address}</span>
+          <span>Her Gün 09:00 - 22:00</span>
+        </div>
       </footer>
     </main>
 

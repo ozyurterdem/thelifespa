@@ -184,15 +184,14 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .booking-form button { width: 100%; margin-top: 4px; }
 
-.footer { display: grid; grid-template-columns: 1fr 1.3fr 0.8fr; gap: 52px; padding: 50px 72px 58px; background: var(--ivory); }
+.footer { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 52px; padding: 50px 72px 58px; background: var(--ivory); }
 .footer h2 { font-size: var(--h3); line-height: var(--h3-line); text-transform: uppercase; letter-spacing: 0.02em; }
-.footer p { max-width: 360px; color: var(--muted); }
-.palette { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-content: end; }
-.palette span { display: grid; gap: 54px; color: var(--muted); font-size: var(--small); line-height: var(--small-line); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.palette span::before { content: ""; display: block; height: 54px; background: var(--c); border: 1px solid rgba(79,80,63,0.05); }
-.type-sample { align-self: end; border-left: 1px solid var(--line); padding-left: 40px; }
-.type-sample strong { display: block; font-family: var(--font-heading); font-size: 78px; line-height: 1; font-weight: 500; }
-.type-sample span { color: var(--muted); font-size: var(--small); line-height: var(--small-line); }
+.footer p { max-width: 430px; color: var(--muted); }
+.footer-links, .footer-contact { display: grid; align-content: start; gap: 12px; color: var(--muted); font-size: var(--small); line-height: var(--small-line); }
+.footer-links a { width: fit-content; color: var(--ink); font-weight: 600; }
+.footer-links a:hover { color: var(--eucalyptus); }
+.footer-contact { border-left: 1px solid var(--line); padding-left: 36px; }
+.footer-contact strong { color: var(--ink); font-family: var(--font-heading); font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (max-width: 1100px) {
@@ -218,5 +217,5 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); }
   .wellness-gallery div { grid-template-columns: 1fr; }
   .gallery-main, .wellness-gallery div img { height: 300px; }
   .waiting img { width: 100%; height: 240px; }
-  .palette { grid-template-columns: repeat(3, 1fr); }
+  .footer-contact { border-left: 0; padding-left: 0; }
 }

@@ -43,6 +43,18 @@ const areas = [
 
 const highlights = ['Serdivan merkezde kolay ulaşım', 'Özel oda ve jakuzi seçenekleri', 'Kese köpük + sauna akışı', 'WhatsApp ile hızlı saat teyidi'];
 
+const heroNotes = [
+  ['Rezervasyon', 'WhatsApp ile kişisel saat teyidi'],
+  ['Atmosfer', 'Sessiz, ferah ve mahrem alanlar'],
+  ['Ritüel', 'Masaj + hamam + jakuzi akışı'],
+];
+
+const stats = [
+  ['09:00–22:00', 'Her gün açık'],
+  ['4+', 'İmza spa ritüeli'],
+  ['2 kişilik', 'Özel oda seçeneği'],
+];
+
 const packages = [
   ['Arınma Molası', 'Hamam, kese köpük ve sauna ile bedeni tazeleyen kısa spa akışı.'],
   ['Derin Rahatlama', 'Medikal taş masaj ve sakin dinlenme süreciyle kas gerginliğine odaklanır.'],
@@ -130,7 +142,24 @@ const structuredData = {
             <a class="link-cta" href="#ritueller">Deneyim Keşfet <span>→</span></a>
           </div>
         </div>
+
+        <aside class="hero-concierge" aria-label="The Life Spa kısa bilgi">
+          <span>Concierge</span>
+          <strong>{phoneDisplay}</strong>
+          <p>Seans öncesi uygun saat, hizmet seçimi ve çift oda talebiniz WhatsApp üzerinden netleştirilir.</p>
+          <div>
+            {heroNotes.map(([title, text]) => (
+              <dl><dt>{title}</dt><dd>{text}</dd></dl>
+            ))}
+          </div>
+        </aside>
         <a class="scroll-indicator" href="#ritueller" aria-label="Aşağı kaydır">↓</a>
+      </section>
+
+      <section class="stat-strip" aria-label="The Life Spa kısa istatistikler">
+        {stats.map(([value, label]) => (
+          <div><strong>{value}</strong><span>{label}</span></div>
+        ))}
       </section>
 
       <section class="trust-band" aria-label="Öne çıkan özellikler">
@@ -145,7 +174,7 @@ const structuredData = {
         <p>Hızlı tüketilen bir bakım yerine, sakinleşmeye zaman tanıyan bir deneyim tasarlıyoruz. Salon hazırlığından seans akışına kadar her adım; mahremiyet, hijyen ve konfor hissini koruyacak şekilde planlanır.</p>
       </section>
 
-      <section class="block" id="ritueller">
+      <section class="block rituals-section" id="ritueller">
         <div class="section-title row-title">
           <div><span>İmza Ritüeller</span><i></i></div>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">Uygun saat sor →</a>
@@ -153,8 +182,11 @@ const structuredData = {
         <div class="ritual-grid">
           {rituals.map((ritual) => (
             <article class="ritual-card">
-              <img src={ritual.image} alt={`${ritual.title} görseli`} loading="lazy" decoding="async" />
+              <figure>
+                <img src={ritual.image} alt={`${ritual.title} görseli`} loading="lazy" decoding="async" />
+              </figure>
               <div>
+                <span class="card-kicker">Signature Treatment</span>
                 <h2>{ritual.title}</h2>
                 <p>{ritual.text}</p>
                 <small>{ritual.meta}</small>

@@ -3,15 +3,16 @@
 > Anlık durum dosyası. Her sprint başı/sonu ve deploy sonrası güncelle.
 > Geçmiş kayıt için `OPS_LOG.md` ve `CHANGELOG.md`'ye bak.
 
-**Last updated:** 2026-05-26 14:20 — İlk yayın + standart iskelet
+**Last updated:** 2026-06-15 — Premium yeniden inşa (v0.1.0): component mimarisi + motion + islands
 
 ---
 
 ## Active sprint
 
-- **Ad:** Geçici landing yayını
-- **Başlangıç:** 2026-05-26
-- **Hedef:** The Life Spa için Astro 6 + React Islands + Tailwind CSS 4 tabanlı hızlı, SEO dostu geçici site altyapısı.
+- **Ad:** Premium landing yükseltme
+- **Başlangıç:** 2026-06-15
+- **Hedef:** Tek dosyalık landing'i component mimarisine taşımak; vanilla motion, lucide ikonlar,
+  React island'lar (mobil menü, FAQ akordeon, galeri lightbox), görsel derinlik ile "üst lig" kalite.
 - **Açık PR'lar:** Yok
 
 ---
@@ -26,7 +27,7 @@ Yok.
 
 | # | Severity | Tanım | Lokasyon | Workaround |
 |---|---|---|---|---|
-| 1 | P3 | İçerik ve tasarım henüz starter/minimal seviyede | `/` | Asıl brief uygulanacak |
+| 1 | P3 | Görseller hâlâ küratörlü Unsplash stok; gerçek işletme fotoğrafları bekleniyor | `data/site.ts` | İçerik hazır olunca tek yerden değiştir |
 
 ---
 
@@ -63,4 +64,6 @@ Yok.
 - [x] GitHub repo oluştur ve `main` push et
 - [x] İstanbul Coolify deploy
 - [x] Cloudflare DNS + HTTPS smoke test
-- [ ] Gerçek landing içerik ve UI uygulanacak
+- [x] Gerçek landing içerik ve UI (premium yeniden inşa, v0.1.0)
+- [ ] Production deploy (v0.1.0 → Coolify IST)
+- [ ] Gerçek işletme fotoğraflarıyla görselleri değiştir

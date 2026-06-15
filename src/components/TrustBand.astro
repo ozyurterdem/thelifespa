@@ -1,0 +1,11 @@
+---
+import { highlights } from '../data/site';
+import Icon from './Icon.astro';
+
+const icons = ['map-pin', 'flower', 'droplet', 'whatsapp'] as const;
+---
+<section class="trust-band" data-stagger aria-label="Öne çıkan özellikler">
+  {highlights.map((item, i) => (
+    <span><Icon name={icons[i]} size={18} /> {item}</span>
+  ))}
+</section>

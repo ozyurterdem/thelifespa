@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0e6d6"/>
+      <stop offset="1" stop-color="#e7dcc8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="none" stroke="#8fa48f" stroke-opacity="0.5"/>
+  <text x="600" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#738b73" letter-spacing="8">SERDIVAN · SAKARYA</text>
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="118" fill="#4f503f" font-weight="600">The Life Spa</text>
+  <text x="600" y="440" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#777363" letter-spacing="2">Masaj · Hamam · Sauna · Jakuzi · Çift Spa</text>
+</svg>

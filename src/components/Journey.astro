@@ -1,0 +1,19 @@
+---
+import { journey } from '../data/site';
+import Reveal from './Reveal.astro';
+---
+<section class="journey">
+  <Reveal class="journey-title">
+    <span class="section-label">Randevu Akışı</span>
+    <h2>Sakin bir deneyim için randevunuz önceden hazırlanır.</h2>
+  </Reveal>
+  <div class="journey-steps" data-stagger>
+    {journey.map(([number, title, text]) => (
+      <article>
+        <span>{number}</span>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </article>
+    ))}
+  </div>
+</section>

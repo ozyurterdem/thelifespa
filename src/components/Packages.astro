@@ -1,0 +1,27 @@
+---
+import { packages } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+import Reveal from './Reveal.astro';
+---
+<section class="packages" id="paketler">
+  <Reveal class="package-hero">
+    <span class="section-label">Özel Spa Akışları</span>
+    <h2>Tek bir işlem değil, tamamlanmış bir mola.</h2>
+    <p>
+      Hizmetleri tek tek seçebilir veya ihtiyacınıza göre bir spa akışı oluşturabilirsiniz. Fiyat ve
+      uygunluk bilgisi WhatsApp üzerinden netleştirilir.
+    </p>
+  </Reveal>
+  <div class="package-list" data-stagger>
+    {packages.map(([title, text]) => (
+      <article>
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <a href={whatsappUrl(`Merhaba, "${title}" spa akışı hakkında bilgi almak istiyorum.`)} target="_blank" rel="noreferrer">
+          Bilgi al <Icon name="arrow-right" size={14} />
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

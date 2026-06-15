@@ -1,0 +1,14 @@
+---
+import { faqs } from '../data/site';
+import Reveal from './Reveal.astro';
+import FaqAccordion from './FaqAccordion.tsx';
+---
+<section class="faq-section">
+  <Reveal class="faq-title">
+    <span class="section-label">Sık Sorulanlar</span>
+    <h2>Gelmeden önce bilmek isteyecekleriniz.</h2>
+  </Reveal>
+  <Reveal delay={0.1}>
+    <FaqAccordion client:visible faqs={faqs} />
+  </Reveal>
+</section>

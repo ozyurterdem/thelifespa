@@ -1,0 +1,29 @@
+---
+import { areas, gallery } from '../data/site';
+import Icon from './Icon.astro';
+import Reveal from './Reveal.astro';
+import GalleryLightbox from './GalleryLightbox.tsx';
+
+const areaIcons = ['flower', 'flame', 'droplet', 'users'] as const;
+---
+<section class="wellness" id="wellness">
+  <Reveal class="wellness-copy">
+    <span class="section-label">Wellness Alanları</span>
+    <h2>Yoğun Günün Ardından Kendinize Alan Açın.</h2>
+    <p>
+      İş ve yaşam temposundan uzaklaşmak, gevşemek ve stresten arınmak için hazırlanan spa akışında
+      her detay konfor, temizlik ve sakinlik hissini güçlendirmek için planlanır.
+    </p>
+    <div class="area-list">
+      {areas.map(([title, text], i) => (
+        <div class="area-item">
+          <span aria-hidden="true"><Icon name={areaIcons[i]} size={18} /></span>
+          <div><strong>{title}</strong><p>{text}</p></div>
+        </div>
+      ))}
+    </div>
+  </Reveal>
+  <Reveal delay={0.1}>
+    <GalleryLightbox client:visible images={gallery} />
+  </Reveal>
+</section>

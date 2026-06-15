@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+---
+<footer class="footer">
+  <div class="footer-brand">
+    <span class="footer-mark">The Life</span>
+    <p>Serdivan’da masaj, hamam, sauna, jakuzi ve çiftlere özel spa deneyimini sakin, ferah ve profesyonel bir atmosferde sunuyoruz.</p>
+    <a class="footer-cta" href={whatsappUrl()} target="_blank" rel="noreferrer">
+      <Icon name="whatsapp" size={16} /> WhatsApp ile Randevu Al
+    </a>
+  </div>
+
+  <div class="footer-column" aria-label="Hizmetler">
+    <span>Hizmetler</span>
+    <a href="#ritueller">İsveç Masajı</a>
+    <a href="#ritueller">Medikal Taş Masaj</a>
+    <a href="#ritueller">Hamam &amp; Kese Köpük</a>
+    <a href="#ritueller">Çift Spa Deneyimi</a>
+  </div>
+
+  <div class="footer-column" aria-label="Deneyim">
+    <span>Deneyim</span>
+    <a href="#wellness">Wellness Alanları</a>
+    <a href="#paketler">Özel Spa Akışları</a>
+    <a href="#randevu">Randevu Akışı</a>
+    <a href="#iletisim">İletişim</a>
+  </div>
+
+  <div class="footer-contact">
+    <span>Rezervasyon</span>
+    <strong>{site.phoneDisplay}</strong>
+    <p>{site.address}</p>
+    <p>{site.hours}</p>
+  </div>
+</footer>

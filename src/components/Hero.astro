@@ -1,0 +1,42 @@
+---
+import { heroNotes, site } from '../data/site';
+import Icon from './Icon.astro';
+import Nav from './Nav.astro';
+
+const heroImage =
+  'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1900&q=90';
+---
+<section class="hero" id="top">
+  <div class="hero-bg" data-parallax style={`background-image:url("${heroImage}")`}></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <Nav />
+
+  <div class="hero-content">
+    <p class="kicker hero-anim" style="--i:0"><Icon name="sparkles" size={15} /> Serdivan’da sakin ve seçkin bir spa molası</p>
+    <h1 class="hero-anim" style="--i:1">Sessizliğin Lüksle Buluştuğu Spa Deneyimi</h1>
+    <p class="hero-lead hero-anim" style="--i:2">
+      The Life Spa; İsveç masajı, medikal taş masaj, hamam, sauna, jakuzi ve çiftlere özel spa
+      deneyimini ferah salonlarda profesyonel uygulama anlayışıyla sunar.
+    </p>
+    <div class="hero-actions hero-anim" style="--i:3">
+      <a class="primary" href="#randevu">Randevu Oluştur <Icon name="arrow-right" size={17} /></a>
+      <a class="link-cta" href="#ritueller">Deneyim Keşfet <Icon name="arrow-right" size={15} /></a>
+    </div>
+  </div>
+
+  <aside class="hero-concierge hero-anim" style="--i:4" aria-label="The Life Spa kısa bilgi">
+    <span><Icon name="phone" size={13} /> Concierge</span>
+    <strong>{site.phoneDisplay}</strong>
+    <p>Seans öncesi uygun saat, hizmet seçimi ve çift oda talebiniz WhatsApp üzerinden netleştirilir.</p>
+    <div>
+      {heroNotes.map(([title, text]) => (
+        <dl><dt>{title}</dt><dd>{text}</dd></dl>
+      ))}
+    </div>
+  </aside>
+
+  <a class="scroll-indicator" href="#ritueller" aria-label="Aşağı kaydır">
+    <Icon name="arrow-down" size={18} />
+  </a>
+</section>

@@ -1,0 +1,15 @@
+---
+import { navLinks } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+import MobileNav from './MobileNav.tsx';
+
+const ctaHref = whatsappUrl();
+---
+<header class="top-nav" data-nav>
+  <a class="logo" href="#top">The&nbsp;Life</a>
+  <nav class="nav-links" aria-label="Ana menü">
+    {navLinks.map(([href, label]) => <a href={href}>{label}</a>)}
+  </nav>
+  <a class="nav-button" href="#randevu">Randevu Oluştur</a>
+  <MobileNav client:idle links={navLinks} ctaHref={ctaHref} />
+</header>

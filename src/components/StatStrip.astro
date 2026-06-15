@@ -1,0 +1,8 @@
+---
+import { stats } from '../data/site';
+---
+<section class="stat-strip" data-stagger aria-label="The Life Spa kısa istatistikler">
+  {stats.map(([value, label]) => (
+    <div><strong>{value}</strong><span>{label}</span></div>
+  ))}
+</section>

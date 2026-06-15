@@ -1,0 +1,27 @@
+---
+import { rituals } from '../data/site';
+import { whatsappUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+import Reveal from './Reveal.astro';
+---
+<section class="block rituals-section" id="ritueller">
+  <Reveal class="section-title row-title">
+    <div><span>İmza Ritüeller</span><i></i></div>
+    <a href={whatsappUrl()} target="_blank" rel="noreferrer">Uygun saat sor <Icon name="arrow-right" size={14} /></a>
+  </Reveal>
+  <div class="ritual-grid" data-stagger>
+    {rituals.map((ritual) => (
+      <article class="ritual-card">
+        <figure>
+          <img src={ritual.image} alt={`${ritual.title} görseli`} width="900" height="600" loading="lazy" decoding="async" />
+          <span class="card-kicker"><Icon name="leaf" size={13} /> Signature Treatment</span>
+        </figure>
+        <div>
+          <h3>{ritual.title}</h3>
+          <p>{ritual.text}</p>
+          <small>{ritual.meta}</small>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

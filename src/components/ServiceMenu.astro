@@ -1,0 +1,18 @@
+---
+import { serviceMenu } from '../data/site';
+import Reveal from './Reveal.astro';
+---
+<section class="service-menu">
+  <Reveal class="menu-title">
+    <span class="section-label">Hizmet Menüsü</span>
+    <h2>İhtiyacınızı tek bir başlıkla değil, doğru akışla ele alırız.</h2>
+  </Reveal>
+  <div class="menu-list" data-stagger>
+    {serviceMenu.map(([title, text]) => (
+      <article>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </article>
+    ))}
+  </div>
+</section>

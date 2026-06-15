@@ -1,0 +1,22 @@
+---
+import { protocols } from '../data/site';
+import Reveal from './Reveal.astro';
+---
+<section class="protocol">
+  <Reveal class="protocol-copy">
+    <span class="section-label">Hazırlık Protokolü</span>
+    <h2>Premium his, seans başlamadan önce kurulur.</h2>
+    <p>
+      Misafirin deneyimi sadece uygulama anından ibaret değildir. Odanın hazırlanması, akışın
+      sıralanması ve seans sonrası dinlenme geçişi aynı bütünün parçalarıdır.
+    </p>
+  </Reveal>
+  <div class="protocol-list" data-stagger>
+    {protocols.map(([title, text]) => (
+      <article>
+        <span></span>
+        <div><h3>{title}</h3><p>{text}</p></div>
+      </article>
+    ))}
+  </div>
+</section>

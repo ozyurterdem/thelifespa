@@ -1,0 +1,22 @@
+---
+import { experienceLayers } from '../data/site';
+import Reveal from './Reveal.astro';
+
+const icons = ['leaf', 'sparkles', 'waves'] as const;
+import Icon from './Icon.astro';
+---
+<section class="experience-layers">
+  <Reveal class="layer-heading">
+    <span class="section-label">Deneyimin Katmanları</span>
+    <h2>Lüks burada gösteriş değil, iyi düşünülmüş sessizliktir.</h2>
+  </Reveal>
+  <div class="layer-grid" data-stagger>
+    {experienceLayers.map(([title, text], i) => (
+      <article>
+        <span class="layer-icon"><Icon name={icons[i]} size={22} /></span>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </article>
+    ))}
+  </div>
+</section>

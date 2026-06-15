@@ -1,0 +1,16 @@
+---
+// Scroll-reveal işaretleyici. motion.ts bu [data-reveal] elemanlarını yakalar.
+// `as` ile sarmalayıcı etiket, `delay` ile stagger gecikmesi (sn), `y` ile kayış.
+// Kalan tüm attribute'lar (id, aria-*, vb.) doğrudan etikete forward edilir.
+interface Props {
+  as?: string;
+  class?: string;
+  delay?: number;
+  y?: number;
+  [key: string]: unknown;
+}
+const { as: Tag = 'div', class: className = '', delay = 0, y = 24, ...rest } = Astro.props;
+---
+<Tag class={className} data-reveal data-reveal-delay={delay} data-reveal-y={y} {...rest}>
+  <slot />
+</Tag>

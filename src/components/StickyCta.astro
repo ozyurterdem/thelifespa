@@ -1,0 +1,18 @@
+---
+import { whatsappUrl } from '../lib/whatsapp';
+import Icon from './Icon.astro';
+---
+<!-- Mobilde alt sabit çubuk -->
+<div class="sticky-cta" aria-label="Hızlı randevu">
+  <a class="sticky-wa" href={whatsappUrl()} target="_blank" rel="noreferrer">
+    <Icon name="whatsapp" size={18} /> WhatsApp
+  </a>
+  <a class="sticky-book" href="#randevu">
+    <Icon name="sparkles" size={16} /> Randevu Oluştur
+  </a>
+</div>
+
+<!-- Desktop sağ-alt yüzen WhatsApp -->
+<a class="fab-wa" href={whatsappUrl()} target="_blank" rel="noreferrer" aria-label="WhatsApp ile yazın">
+  <Icon name="whatsapp" size={26} />
+</a>

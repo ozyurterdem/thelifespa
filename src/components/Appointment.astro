@@ -1,0 +1,55 @@
+---
+import { rituals, site } from '../data/site';
+import Icon from './Icon.astro';
+import Reveal from './Reveal.astro';
+
+const waitingImage =
+  'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=85';
+---
+<section class="appointment" id="randevu">
+  <Reveal class="waiting" id="iletisim">
+    <img src={waitingImage} alt="Minimal spa objesi" width="700" height="900" loading="lazy" decoding="async" />
+    <div>
+      <span class="section-label">Sizi Bekliyoruz</span>
+      <h2>Zamanı Kendinize Ayırın</h2>
+      <p>Masaj, hamam, sauna, jakuzi veya çift spa talebinizi iletin; size uygun saat aralığını WhatsApp üzerinden netleştirelim.</p>
+      <ul>
+        <li><Icon name="phone" size={16} /> {site.phoneDisplay}</li>
+        <li><Icon name="whatsapp" size={16} /> WhatsApp: {site.phoneDisplay}</li>
+        <li><Icon name="map-pin" size={16} /> {site.address}</li>
+        <li><Icon name="clock" size={16} /> {site.hours}</li>
+      </ul>
+    </div>
+  </Reveal>
+
+  <Reveal as="form" class="booking-form" id="bookingForm" delay={0.1}>
+    <span class="section-label">Randevu Oluştur</span>
+    <input name="name" autocomplete="name" placeholder="Ad Soyad" aria-label="Ad Soyad" />
+    <div class="form-row">
+      <input name="phone" autocomplete="tel" placeholder="Telefon" aria-label="Telefon" />
+      <input name="email" autocomplete="email" placeholder="E-posta" aria-label="E-posta" />
+    </div>
+    <select name="date" aria-label="Tercih edilen tarih">
+      <option>Tercih Edilen Gün</option><option>Bugün</option><option>Yarın</option><option>Bu hafta</option>
+    </select>
+    <select name="service" aria-label="Hizmet seçiniz">
+      <option>Hizmet Seçiniz</option>
+      {rituals.map((ritual) => <option>{ritual.title}</option>)}
+    </select>
+    <button type="submit">Randevu Talebini Gönder <Icon name="arrow-right" size={16} /></button>
+  </Reveal>
+</section>
+
+<script>
+  import { bookingMessage, whatsappUrl } from '../lib/whatsapp';
+
+  const form = document.querySelector<HTMLFormElement>('#bookingForm');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const fields = Object.fromEntries(
+      ['name', 'phone', 'email', 'date', 'service'].map((k) => [k, String(data.get(k) ?? '')]),
+    );
+    window.open(whatsappUrl(bookingMessage(fields)), '_blank', 'noopener,noreferrer');
+  });
+</script>
